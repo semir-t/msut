@@ -41,15 +41,14 @@ sudo apt-get install libvte-dev
 After this, restart the geany and in the left bottom corner you should see the tab **Terminal**.
 
 3. Clone the [GitHub repository](https://github.com/semir-t/msut).
-4. Download the file and extract it to the cloned github repository.
-5. Copy the udev rules by executing following command
+4. Copy the udev rules by executing following command
 ```
 sudo cp docs/49-stlinkv2.rules /etc/udev/rules.d/
 ```
 ```
 udevadm control --reload-rules && udevadm trigger
 ```
-6. Change the directory to examples/LAB01/blink-soft-circle/ and runk the following command
+5. Change the directory to examples/LAB01/blink-soft-circle/ and runk the following command
 ```
 make
 ```
@@ -62,7 +61,7 @@ ls -l main.bin
 -rwxrwxr-x 1 student student 3484 Nov 5 13:23 main.bin
 ``` 
 
-7. Install the Linux system libraries
+6. Install the Linux system libraries
 ```
 sudo apt-get install build-essential git flex bison libgmp3-dev libmpfr-dev
 ```
@@ -79,9 +78,9 @@ sudo apt-get install libusb-1.0-0-dev zlib1g zlib1g-dev python-yaml
 sudo apt-get install libc6-i386
 ```
 
-8. Connect you STM32 Disco board
+7. Connect you STM32 Disco board
 
-9. Run the following command
+8. Run the following command
 ```
 make upload
 ```
@@ -143,9 +142,9 @@ Device CPU  : Cortex-M4
 Hard reset is performed
 
 ```
-10. You should see LEDs turning On and Off on your disco board.
+9. You should see LEDs turning On and Off on your disco board.
 
-11. Install the picocom by running following command in terminal
+10. Install the picocom by running following command in terminal
 ```
 sudo apt-get install picocom
 ```
