@@ -140,7 +140,18 @@ Device CPU  : Cortex-M4
 
 
 Hard reset is performed
+```
+If you see following output instead of the above one, you need to performe firmware upgrade procedured described in the next section.
+```
+      -------------------------------------------------------------------
+                        STM32CubeProgrammer v2.6.0                  
+      -------------------------------------------------------------------
+Error: Old ST-LINK firmware version. Upgrade ST-LINK firmware
+Error: Old ST-LINK firmware version. Upgrade ST-LINK firmware
+Error: Old ST-LINK firmware! Please upgrade it.
 
+Makefile:53:recipe for target 'upload' failed
+make: *** [upload] Error 1
 ```
 9. You should see LEDs turning On and Off on your disco board.
 
@@ -148,3 +159,26 @@ Hard reset is performed
 ```
 sudo apt-get install picocom
 ```
+
+# ST-Link Firmware upgrade
+1. Connect you STM32 Disco board
+2. Change your current position to the stmcubeprog/bin folder
+```
+cd stmcubeprog/bin/
+```
+3. Run the STMCubeProg by executing following command.
+```
+sudo ./STM32CubeProgrammer
+```
+4.  Click on the firmware upgrade button
+![ST-Link firmware upgrade](images/st-link-fw-upgrade-01.png  "ST-Link firmware upgrade")
+5. You should see following window. Click on the Open in update mode.
+![ST-Link firmware upgrade](images/st-link-fw-upgrade-02.png  "ST-Link firmware upgrade")
+6. You should be able to click on the Upgrade button.
+![ST-Link firmware upgrade](images/st-link-fw-upgrade-03.png  "ST-Link firmware upgrade")
+7. Wait for the upgrade procedure to finish. If the upgrade procedure was successfull you should see following output.
+![ST-Link firmware upgrade](images/st-link-fw-upgrade-04.png  "ST-Link firmware upgrade")
+8. You should be able now to successfully run command ``` make upload ``` from the terminal.
+
+
+
