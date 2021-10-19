@@ -59,7 +59,7 @@ arm-none-eabi-objcopy -O ihex main.elf main.hex
 arm-none-eabi-objcopy -O binary main.elf main.bin
 ls -l main.bin
 -rwxrwxr-x 1 student student 3484 Nov 5 13:23 main.bin
-``` 
+```
 
 6. Install the Linux system libraries
 ```
@@ -87,7 +87,7 @@ make upload
 You should see following output:
 ```
       -------------------------------------------------------------------
-                        STM32CubeProgrammer v2.6.0                  
+                        STM32CubeProgrammer v2.6.0
       -------------------------------------------------------------------
 
 ST-LINK SN  : 066DFF505252836687075844
@@ -110,7 +110,7 @@ Memory Programming ...
 Opening and parsing file: main.bin
   File          : main.bin
   Size          : 3148 Bytes
-  Address       : 0x08000000 
+  Address       : 0x08000000
 
 
 Erasing memory corresponding to segment 0:
@@ -121,7 +121,7 @@ Download in Progress:
 File download complete
 Time elapsed during download operation: 00:00:00.357
       -------------------------------------------------------------------
-                        STM32CubeProgrammer v2.6.0                  
+                        STM32CubeProgrammer v2.6.0
       -------------------------------------------------------------------
 
 ST-LINK SN  : 066DFF505252836687075844
@@ -144,7 +144,7 @@ Hard reset is performed
 If you see following output instead of the above one, you need to performe firmware upgrade procedured described in the next section.
 ```
       -------------------------------------------------------------------
-                        STM32CubeProgrammer v2.6.0                  
+                        STM32CubeProgrammer v2.6.0
       -------------------------------------------------------------------
 Error: Old ST-LINK firmware version. Upgrade ST-LINK firmware
 Error: Old ST-LINK firmware version. Upgrade ST-LINK firmware
