@@ -1,3 +1,4 @@
+* [![Github pages build](https://github.com/semir-t/msut/actions/workflows/github-page-build.yml/badge.svg)](https://github.com/semir-t/msut/actions/workflows/github-page-build.yml)
 # Microprocessor systems in telecommunications
   Learning material and examples for course TK402 at FE Tuzla
 
