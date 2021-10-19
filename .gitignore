@@ -1,0 +1,6 @@
+venv/
+*.pyc
+docs/design/_build/*
+.vscode*
+docs/
+
