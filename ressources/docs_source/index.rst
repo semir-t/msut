@@ -1,15 +1,14 @@
-.. _anvil-firmware-top:
+.. _msut-firmware-top:
 
-Design documentation
+Learnig material
 ********************
 
-Test
+Microprocessor systems in telecommunications
 ===================================
 
 :Date: October 2021
 :Authors: Test
-:Web site: test
-:Copyright: test
+:Web site: www.semir-t.github.io/msut/
 :Version: 1.0.0
 
 Contents:
