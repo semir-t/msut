@@ -40,7 +40,7 @@ main:
 	ldr	r3, [r1, #48]
 .LBB6:
 .LBB7:
-	.loc 1 29 0
+	.loc 1 30 0
 	ldr	r0, .L17+8
 .LBE7:
 .LBE6:
@@ -68,23 +68,23 @@ main:
 	.cfi_def_cfa_offset 8
 	.loc 1 14 0
 	str	r3, [r2, #20]
-	.loc 1 19 0
+	.loc 1 20 0
 	mov	r1, #61440
 .L6:
 .LVL0:
 .LBB9:
 .LBB8:
-	.loc 1 29 0 discriminator 1
-	str	r0, [sp, #4]
 	.loc 1 30 0 discriminator 1
+	str	r0, [sp, #4]
+	.loc 1 31 0 discriminator 1
 	ldr	r3, [sp, #4]
 	cbz	r3, .L2
 .L3:
-	.loc 1 32 0
+	.loc 1 33 0
 	ldr	r3, [sp, #4]
 	subs	r3, r3, #1
 	str	r3, [sp, #4]
-	.loc 1 30 0
+	.loc 1 31 0
 	ldr	r3, [sp, #4]
 	cmp	r3, #0
 	bne	.L3
@@ -92,22 +92,22 @@ main:
 .LVL1:
 .LBE8:
 .LBE9:
-	.loc 1 19 0
+	.loc 1 20 0
 	strh	r1, [r2, #24]	@ movhi
 .LVL2:
 .LBB10:
 .LBB11:
-	.loc 1 29 0
-	str	r0, [sp]
 	.loc 1 30 0
+	str	r0, [sp]
+	.loc 1 31 0
 	ldr	r3, [sp]
 	cbz	r3, .L4
 .L5:
-	.loc 1 32 0
+	.loc 1 33 0
 	ldr	r3, [sp]
 	subs	r3, r3, #1
 	str	r3, [sp]
-	.loc 1 30 0
+	.loc 1 31 0
 	ldr	r3, [sp]
 	cmp	r3, #0
 	bne	.L5
@@ -115,9 +115,9 @@ main:
 .LVL3:
 .LBE11:
 .LBE10:
-	.loc 1 21 0
+	.loc 1 22 0
 	strh	r1, [r2, #26]	@ movhi
-	.loc 1 18 0
+	.loc 1 19 0
 	b	.L6
 .L18:
 	.align	2
@@ -139,7 +139,7 @@ main:
 	.type	delay_soft_ms, %function
 delay_soft_ms:
 .LFB111:
-	.loc 1 27 0
+	.loc 1 28 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 8
 	@ frame_needed = 0, uses_anonymous_args = 0
@@ -147,25 +147,25 @@ delay_soft_ms:
 .LVL4:
 	sub	sp, sp, #8
 	.cfi_def_cfa_offset 8
-	.loc 1 29 0
+	.loc 1 30 0
 	movw	r3, #10500
 	mul	r0, r3, r0
 .LVL5:
 	str	r0, [sp, #4]
-	.loc 1 30 0
+	.loc 1 31 0
 	ldr	r3, [sp, #4]
 	cbz	r3, .L19
 .L21:
-	.loc 1 32 0
+	.loc 1 33 0
 	ldr	r3, [sp, #4]
 	subs	r3, r3, #1
 	str	r3, [sp, #4]
-	.loc 1 30 0
+	.loc 1 31 0
 	ldr	r3, [sp, #4]
 	cmp	r3, #0
 	bne	.L21
 .L19:
-	.loc 1 35 0
+	.loc 1 36 0
 	add	sp, sp, #8
 	.cfi_def_cfa_offset 0
 	@ sp needed
@@ -560,18 +560,18 @@ delay_soft_ms:
 	.uleb128 0xe
 	.4byte	.LASF56
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.byte	0x1
 	.4byte	0x34e
 	.uleb128 0xf
 	.ascii	"cnt\000"
 	.byte	0x1
-	.byte	0x1a
+	.byte	0x1b
 	.4byte	0xac
 	.uleb128 0x10
 	.4byte	.LASF57
 	.byte	0x1
-	.byte	0x1d
+	.byte	0x1e
 	.4byte	0xb7
 	.byte	0
 	.uleb128 0x11
@@ -589,7 +589,7 @@ delay_soft_ms:
 	.4byte	.LBB6
 	.4byte	.Ldebug_ranges0+0
 	.byte	0x1
-	.byte	0x12
+	.byte	0x13
 	.4byte	0x392
 	.uleb128 0x13
 	.4byte	0x337
@@ -608,7 +608,7 @@ delay_soft_ms:
 	.4byte	.LBB10
 	.4byte	.LBE10-.LBB10
 	.byte	0x1
-	.byte	0x14
+	.byte	0x15
 	.uleb128 0x13
 	.4byte	0x337
 	.4byte	.LLST1

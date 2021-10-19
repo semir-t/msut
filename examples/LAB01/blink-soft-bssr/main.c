@@ -11,7 +11,8 @@ int main(void)
     GPIOD->OTYPER = 0x00000000;											// Output push-pull 
     GPIOD->OSPEEDR |= 0xFF000000; 										// set max speed
 
-	GPIOD->ODR &= ~(0x000F << 12);										// Clear all LEDs
+	GPIOD->ODR = GPIOD->ODR & ~(0xF000);										// Clear all LEDs
+	
 	///wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 	
 	while(1)
 	{
