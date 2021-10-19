@@ -11,7 +11,7 @@ NC='\033[0m' # No Color
 # Validate current working directory is the top-level of the project (esmart-anvil-firmware/)
 REQUIREMENT_TXT=requirements.txt
 if ! test -f "$REQUIREMENT_TXT"; then
-    echo -e "${RED}Please call the script from the top level of the project 'esmart-anvil-firmware/'${NC}"
+    echo -e "${RED}Please call the script from the top level of the project ${NC}"
     echo -e "${RED}eg. bash_script/doc_xxx.sh${NC}"
     exit -1
 fi
