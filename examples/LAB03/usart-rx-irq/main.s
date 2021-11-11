@@ -38,11 +38,11 @@ main:
 	.cfi_offset 7, -8
 	.cfi_offset 14, -4
 	.loc 1 9 0
-	ldr	r3, .L7
+	ldr	r3, .L8
 	.loc 1 20 0
-	ldr	r5, .L7+4
+	ldr	r7, .L8+4
 	.loc 1 31 0
-	ldr	r7, .L7+8
+	ldr	r6, .L8+8
 	.loc 1 9 0
 	ldm	r3, {r0, r1, r2, r3}
 	.loc 1 6 0
@@ -63,65 +63,64 @@ main:
 	bl	initSYSTIMER
 .LVL3:
 	.loc 1 19 0
-	ldr	r2, .L7+12
+	ldr	r2, .L8+12
 	ldr	r3, [r2, #48]
 	orr	r3, r3, #8
 	str	r3, [r2, #48]
 	.loc 1 20 0
-	ldr	r3, [r5]
+	ldr	r3, [r7]
 	orr	r3, r3, #1426063360
-	str	r3, [r5]
+	str	r3, [r7]
 	.loc 1 21 0
-	ldr	r3, [r5, #4]
-	str	r3, [r5, #4]
+	ldr	r3, [r7, #4]
+	str	r3, [r7, #4]
 	.loc 1 22 0
-	ldr	r3, [r5, #8]
+	ldr	r3, [r7, #8]
 	orr	r3, r3, #-16777216
-	str	r3, [r5, #8]
+	str	r3, [r7, #8]
 	.loc 1 24 0
 	bl	getSYSTIMER
 .LVL4:
-	mov	r6, r0
+	mov	r5, r0
 .LVL5:
 	.loc 1 25 0
-	ldr	r0, .L7+16
+	ldr	r0, .L8+16
 .LVL6:
 	bl	printUSART2
 .LVL7:
 	.loc 1 28 0
 	movs	r4, #0
 .LVL8:
-.L4:
+.L2:
 	.loc 1 31 0
-	mov	r1, r7
-	mov	r0, r6
+	mov	r1, r6
+	mov	r0, r5
 	bl	chk4TimeoutSYSTIMER
 .LVL9:
-	.loc 1 34 0
-	add	r3, sp, #16
-	add	r3, r3, r4, lsl #1
-	.loc 1 35 0
-	adds	r1, r4, #1
-	.loc 1 31 0
-	cbnz	r0, .L2
+	cmp	r0, #0
+	bne	.L2
 	.loc 1 33 0
-	ldr	r2, [r5, #20]
+	ldr	r3, [r7, #20]
 	.loc 1 34 0
-	ldrh	r3, [r3, #-16]
+	add	r2, sp, #16
+	add	r1, r2, r4, lsl #1
 	.loc 1 33 0
-	ubfx	r2, r2, #0, #12
-	str	r2, [r5, #20]
+	ubfx	r3, r3, #0, #12
+	str	r3, [r7, #20]
 	.loc 1 34 0
-	ldr	r2, [r5, #20]
+	ldr	r2, [r7, #20]
+	ldrh	r3, [r1, #-16]
 	.loc 1 35 0
-	uxtb	r4, r1
-.LVL10:
+	adds	r4, r4, #1
 	.loc 1 34 0
 	orrs	r3, r3, r2
+	.loc 1 35 0
+	uxtb	r4, r4
+.LVL10:
 	.loc 1 37 0
 	cmp	r4, #8
 	.loc 1 34 0
-	str	r3, [r5, #20]
+	str	r3, [r7, #20]
 	.loc 1 37 0
 	it	eq
 	moveq	r4, #0
@@ -129,17 +128,12 @@ main:
 	.loc 1 39 0
 	bl	getSYSTIMER
 .LVL12:
-	mov	r6, r0
+	mov	r5, r0
 .LVL13:
-.L2:
-	.loc 1 43 0
-	bl	chkRxBuffUSART2
-.LVL14:
-	.loc 1 31 0
-	b	.L4
-.L8:
+	b	.L2
+.L9:
 	.align	2
-.L7:
+.L8:
 	.word	.LANCHOR0
 	.word	1073875968
 	.word	500000
@@ -166,28 +160,28 @@ main:
 	.ascii	"-> SYS: init completed\012\000"
 	.text
 .Letext0:
-	.file 2 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 2 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 4 "../../../sdk/core_cm4.h"
 	.file 5 "../../../sdk/system_stm32f4xx.h"
 	.file 6 "../../../sdk/stm32f4xx.h"
-	.file 7 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
-	.file 8 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
-	.file 9 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
-	.file 10 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
+	.file 7 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
+	.file 8 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
+	.file 9 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+	.file 10 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
 	.file 11 "usart.h"
 	.file 12 "delay.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xc8f
+	.4byte	0xc7b
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF177
+	.4byte	.LASF176
 	.byte	0xc
+	.4byte	.LASF177
 	.4byte	.LASF178
-	.4byte	.LASF179
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1557,7 +1551,7 @@ main:
 	.2byte	0x32f
 	.4byte	0x6f9
 	.uleb128 0x23
-	.4byte	.LASF180
+	.4byte	.LASF179
 	.byte	0x1
 	.byte	0x5
 	.4byte	0x89
@@ -1565,7 +1559,7 @@ main:
 	.4byte	.LFE113-.LFB113
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xc35
+	.4byte	0xc2c
 	.uleb128 0x24
 	.4byte	.LASF167
 	.byte	0x1
@@ -1587,7 +1581,7 @@ main:
 	.4byte	.LASF168
 	.byte	0x1
 	.byte	0x9
-	.4byte	0xc35
+	.4byte	0xc2c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -40
@@ -1599,7 +1593,7 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL1
-	.4byte	0xc45
+	.4byte	0xc3c
 	.4byte	0xbd6
 	.uleb128 0x2a
 	.uleb128 0x1
@@ -1610,16 +1604,16 @@ main:
 	.byte	0
 	.uleb128 0x2b
 	.4byte	.LVL2
-	.4byte	0xc50
+	.4byte	0xc47
 	.uleb128 0x2b
 	.4byte	.LVL3
-	.4byte	0xc5b
+	.4byte	0xc52
 	.uleb128 0x2b
 	.4byte	.LVL4
-	.4byte	0xc66
+	.4byte	0xc5d
 	.uleb128 0x29
 	.4byte	.LVL7
-	.4byte	0xc71
+	.4byte	0xc68
 	.4byte	0xc08
 	.uleb128 0x2a
 	.uleb128 0x1
@@ -1630,31 +1624,28 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL9
-	.4byte	0xc7c
+	.4byte	0xc73
 	.4byte	0xc22
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x2
-	.byte	0x76
+	.byte	0x75
 	.sleb128 0
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x51
 	.uleb128 0x2
-	.byte	0x77
+	.byte	0x76
 	.sleb128 0
 	.byte	0
 	.uleb128 0x2b
 	.4byte	.LVL12
-	.4byte	0xc66
-	.uleb128 0x2b
-	.4byte	.LVL14
-	.4byte	0xc87
+	.4byte	0xc5d
 	.byte	0
 	.uleb128 0x8
 	.4byte	0xa2
-	.4byte	0xc45
+	.4byte	0xc3c
 	.uleb128 0x9
 	.4byte	0x90
 	.byte	0x7
@@ -1689,11 +1680,6 @@ main:
 	.4byte	.LASF175
 	.byte	0xc
 	.byte	0x13
-	.uleb128 0x2c
-	.4byte	.LASF176
-	.4byte	.LASF176
-	.byte	0xb
-	.byte	0x17
 	.byte	0
 	.section	.debug_abbrev,"",%progbits
 .Ldebug_abbrev0:
@@ -2272,9 +2258,13 @@ main:
 	.2byte	0x1
 	.byte	0x50
 	.4byte	.LVL6
+	.4byte	.LVL13
+	.2byte	0x1
+	.byte	0x55
+	.4byte	.LVL13
 	.4byte	.LFE113
 	.2byte	0x1
-	.byte	0x56
+	.byte	0x50
 	.4byte	0
 	.4byte	0
 .LLST1:
@@ -2283,7 +2273,7 @@ main:
 	.2byte	0x2
 	.byte	0x30
 	.byte	0x9f
-	.4byte	.LVL8
+	.4byte	.LVL10
 	.4byte	.LFE113
 	.2byte	0x1
 	.byte	0x54
@@ -2464,10 +2454,9 @@ main:
 	.ascii	"_asctime_buf\000"
 .LASF31:
 	.ascii	"AHB3RSTR\000"
-.LASF179:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/usart-rx-irq\000"
-.LASF177:
+.LASF121:
+	.ascii	"_result\000"
+.LASF176:
 	.ascii	"GNU C11 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mlittle-endian -mthumb -mcpu"
 	.ascii	"=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu"
@@ -2476,7 +2465,7 @@ main:
 	.ascii	"_nextf\000"
 .LASF56:
 	.ascii	"_LOCK_T\000"
-.LASF178:
+.LASF177:
 	.ascii	"main.c\000"
 .LASF127:
 	.ascii	"_new\000"
@@ -2486,8 +2475,6 @@ main:
 	.ascii	"_lock\000"
 .LASF139:
 	.ascii	"_mult\000"
-.LASF121:
-	.ascii	"_result\000"
 .LASF174:
 	.ascii	"printUSART2\000"
 .LASF99:
@@ -2580,6 +2567,9 @@ main:
 	.ascii	"_reent\000"
 .LASF138:
 	.ascii	"_seed\000"
+.LASF178:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/usart-rx-irq\000"
 .LASF62:
 	.ascii	"__count\000"
 .LASF163:
@@ -2670,10 +2660,8 @@ main:
 	.ascii	"_mbtowc_state\000"
 .LASF123:
 	.ascii	"_p5s\000"
-.LASF180:
+.LASF179:
 	.ascii	"main\000"
-.LASF176:
-	.ascii	"chkRxBuffUSART2\000"
 .LASF76:
 	.ascii	"__tm_mday\000"
 	.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"

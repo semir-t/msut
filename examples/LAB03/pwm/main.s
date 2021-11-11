@@ -194,7 +194,7 @@ main:
 	.loc 1 67 0
 	uxtb	r4, r4
 	.loc 1 66 0
-	mov	r0, #500
+	movs	r0, #100
 	bl	delay_ms
 .LVL10:
 	.loc 1 69 0
@@ -252,20 +252,20 @@ main:
 	.ascii	"-> TIM4->CNT: [%d]\012\000"
 	.text
 .Letext0:
-	.file 2 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 2 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 4 "../../../sdk/core_cm4.h"
 	.file 5 "../../../sdk/system_stm32f4xx.h"
 	.file 6 "../../../sdk/stm32f4xx.h"
-	.file 7 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
-	.file 8 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
-	.file 9 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
-	.file 10 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
+	.file 7 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
+	.file 8 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
+	.file 9 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+	.file 10 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
 	.file 11 "usart.h"
 	.file 12 "delay.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xe7b
+	.4byte	0xe7a
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
@@ -1878,7 +1878,7 @@ main:
 	.4byte	.LFE113-.LFB113
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xe4d
+	.4byte	0xe4c
 	.uleb128 0x24
 	.ascii	"cnt\000"
 	.byte	0x1
@@ -1894,7 +1894,7 @@ main:
 	.ascii	"pwm\000"
 	.byte	0x1
 	.byte	0xa
-	.4byte	0xe4d
+	.4byte	0xe4c
 	.uleb128 0x2
 	.byte	0x91
 	.sleb128 -44
@@ -1906,7 +1906,7 @@ main:
 	.4byte	.LLST1
 	.uleb128 0x28
 	.4byte	.Ldebug_ranges0+0
-	.4byte	0xdf6
+	.4byte	0xdf5
 	.uleb128 0x25
 	.4byte	.LASF189
 	.byte	0x1
@@ -1914,7 +1914,7 @@ main:
 	.4byte	0xc2
 	.uleb128 0x29
 	.4byte	.LVL7
-	.4byte	0xe5d
+	.4byte	0xe5c
 	.4byte	0xdd0
 	.uleb128 0x2a
 	.uleb128 0x1
@@ -1931,7 +1931,7 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL9
-	.4byte	0xe5d
+	.4byte	0xe5c
 	.4byte	0xde4
 	.uleb128 0x2a
 	.uleb128 0x1
@@ -1942,19 +1942,19 @@ main:
 	.byte	0
 	.uleb128 0x2b
 	.4byte	.LVL10
-	.4byte	0xe68
+	.4byte	0xe67
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
-	.uleb128 0x3
-	.byte	0xa
-	.2byte	0x1f4
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x64
 	.byte	0
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL2
-	.4byte	0xe73
-	.4byte	0xe0b
+	.4byte	0xe72
+	.4byte	0xe0a
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
@@ -1964,8 +1964,8 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL3
-	.4byte	0xe5d
-	.4byte	0xe22
+	.4byte	0xe5c
+	.4byte	0xe21
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
@@ -1975,8 +1975,8 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL4
-	.4byte	0xe5d
-	.4byte	0xe39
+	.4byte	0xe5c
+	.4byte	0xe38
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
@@ -1986,7 +1986,7 @@ main:
 	.byte	0
 	.uleb128 0x2b
 	.4byte	.LVL5
-	.4byte	0xe5d
+	.4byte	0xe5c
 	.uleb128 0x2a
 	.uleb128 0x1
 	.byte	0x50
@@ -1997,7 +1997,7 @@ main:
 	.byte	0
 	.uleb128 0x8
 	.4byte	0xa2
-	.4byte	0xe5d
+	.4byte	0xe5c
 	.uleb128 0x9
 	.4byte	0x90
 	.byte	0x9
@@ -2700,6 +2700,9 @@ main:
 	.ascii	"_close\000"
 .LASF0:
 	.ascii	"signed char\000"
+.LASF195:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/pwm\000"
 .LASF29:
 	.ascii	"AHB1RSTR\000"
 .LASF122:
@@ -2724,9 +2727,6 @@ main:
 	.ascii	"_cookie\000"
 .LASF150:
 	.ascii	"__sglue\000"
-.LASF195:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/pwm\000"
 .LASF7:
 	.ascii	"long int\000"
 .LASF34:

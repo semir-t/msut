@@ -63,7 +63,7 @@ int main(void)
 		cnt++;
 		uint32_t utmp32 = TIM4->CNT;
 		printUSART2("-> TIM4->CNT: [%d]\n",utmp32);
-		delay_ms(500);
+		delay_ms(100);
 		pwm_cnt++;
 		if(pwm_cnt == (PWM_CNT_ARRAY_SIZE))
 			pwm_cnt = 0;

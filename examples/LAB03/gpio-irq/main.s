@@ -44,7 +44,7 @@ main:
 	ldr	r6, .L7+4
 	.loc 1 23 0
 	ldr	r3, [r4, #48]
-	.loc 1 36 0
+	.loc 1 35 0
 	ldr	r7, .L7+8
 	.loc 1 48 0
 	ldr	r5, .L7+12
@@ -73,13 +73,6 @@ main:
 	ldr	r3, [r4, #48]
 	.loc 1 32 0
 	ldr	r2, .L7+16
-.LBB4:
-.LBB5:
-	.file 2 "../../../sdk/core_cm4.h"
-	.loc 2 1075 0
-	ldr	r1, .L7+20
-.LBE5:
-.LBE4:
 	.loc 1 31 0
 	orr	r3, r3, #1
 	str	r3, [r4, #48]
@@ -89,37 +82,51 @@ main:
 	str	r3, [r2]
 	.loc 1 34 0
 	ldr	r2, [r4, #68]
-	.loc 1 37 0
-	ldr	r3, .L7+24
+	.loc 1 36 0
+	ldr	r3, .L7+20
+	.loc 1 35 0
+	movs	r1, #0
+	.loc 1 36 0
+	movs	r0, #1
 	.loc 1 34 0
 	orr	r2, r2, #16384
 	str	r2, [r4, #68]
-.LVL2:
-.LBB7:
+	.loc 1 35 0
+	str	r1, [r7, #8]
+	.loc 1 36 0
+	str	r0, [r3]
+	.loc 1 37 0
+	ldr	r2, [r3, #4]
+.LBB4:
+.LBB5:
+	.file 2 "../../../sdk/core_cm4.h"
+	.loc 2 1075 0
+	ldr	r4, .L7+24
+.LBE5:
+.LBE4:
+	.loc 1 37 0
+	bic	r2, r2, #1
+	str	r2, [r3, #4]
+.LBB8:
 .LBB6:
 	.loc 2 1075 0
 	movs	r2, #64
-	str	r2, [r1]
-.LVL3:
 .LBE6:
-.LBE7:
-	.loc 1 37 0
-	movs	r0, #1
-	.loc 1 36 0
-	movs	r1, #0
-	str	r1, [r7, #8]
-	.loc 1 37 0
-	str	r0, [r3]
+.LBE8:
 	.loc 1 38 0
-	ldr	r2, [r3, #4]
-	bic	r2, r2, #1
-	str	r2, [r3, #4]
-	.loc 1 39 0
 	str	r0, [r3, #8]
+	.loc 1 39 0
+	str	r1, [r3, #12]
+.LVL2:
 	.loc 1 42 0
 	ldr	r0, .L7+28
-	.loc 1 40 0
-	str	r1, [r3, #12]
+.LBB9:
+.LBB7:
+	.loc 2 1075 0
+	str	r2, [r4]
+.LVL3:
+.LBE7:
+.LBE9:
 	.loc 1 42 0
 	bl	printUSART2
 .LVL4:
@@ -154,8 +161,8 @@ main:
 	.word	1073821696
 	.word	500000
 	.word	1073872896
-	.word	-536813312
 	.word	1073822720
+	.word	-536813312
 	.word	.LC0
 	.cfi_endproc
 .LFE113:
@@ -333,13 +340,13 @@ g_irq_timer:
 	.text
 .Letext0:
 	.file 3 "../../../sdk/stm32f4xx.h"
-	.file 4 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 5 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 4 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 5 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 6 "../../../sdk/system_stm32f4xx.h"
-	.file 7 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
-	.file 8 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
-	.file 9 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
-	.file 10 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
+	.file 7 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
+	.file 8 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
+	.file 9 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+	.file 10 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
 	.file 11 "usart.h"
 	.file 12 "delay.h"
 	.section	.debug_info,"",%progbits
@@ -353,7 +360,7 @@ g_irq_timer:
 	.byte	0xc
 	.4byte	.LASF286
 	.4byte	.LASF287
-	.4byte	.Ldebug_ranges0+0x18
+	.4byte	.Ldebug_ranges0+0x20
 	.4byte	0
 	.4byte	.Ldebug_line0
 	.uleb128 0x2
@@ -2332,7 +2339,7 @@ g_irq_timer:
 	.4byte	.LBB4
 	.4byte	.Ldebug_ranges0+0
 	.byte	0x1
-	.byte	0x23
+	.byte	0x29
 	.4byte	0x1086
 	.uleb128 0x32
 	.4byte	0x10f4
@@ -3156,8 +3163,10 @@ g_irq_timer:
 .Ldebug_ranges0:
 	.4byte	.LBB4
 	.4byte	.LBE4
-	.4byte	.LBB7
-	.4byte	.LBE7
+	.4byte	.LBB8
+	.4byte	.LBE8
+	.4byte	.LBB9
+	.4byte	.LBE9
 	.4byte	0
 	.4byte	0
 	.4byte	.Ltext0
@@ -3226,6 +3235,9 @@ g_irq_timer:
 	.ascii	"DMA2_Stream1_IRQn\000"
 .LASF259:
 	.ascii	"_l64a_buf\000"
+.LASF287:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/gpio-irq\000"
 .LASF59:
 	.ascii	"SPI3_IRQn\000"
 .LASF12:
@@ -3434,9 +3446,6 @@ g_irq_timer:
 	.ascii	"_errno\000"
 .LASF138:
 	.ascii	"CMPCR\000"
-.LASF287:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/gpio-irq\000"
 .LASF260:
 	.ascii	"_signal_buf\000"
 .LASF133:

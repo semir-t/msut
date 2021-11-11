@@ -326,8 +326,8 @@ SystemCoreClock:
 	.word	168000000
 	.text
 .Letext0:
-	.file 2 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 2 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 4 "../../../sdk/core_cm4.h"
 	.file 5 "../../../sdk/system_stm32f4xx.h"
 	.file 6 "../../../sdk/stm32f4xx.h"
@@ -1612,6 +1612,9 @@ SystemCoreClock:
 	.ascii	"uint8_t\000"
 .LASF53:
 	.ascii	"APB1ENR\000"
+.LASF77:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/usart-rx-irq\000"
 .LASF2:
 	.ascii	"short int\000"
 .LASF51:
@@ -1735,7 +1738,4 @@ SystemCoreClock:
 	.ascii	"APB2LPENR\000"
 .LASF38:
 	.ascii	"OPTCR\000"
-.LASF77:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/usart-rx-irq\000"
 	.ident	"GCC: (GNU Tools for Arm Embedded Processors 7-2018-q2-update) 7.3.1 20180622 (release) [ARM/embedded-7-branch revision 261907]"

@@ -775,45 +775,30 @@ printUSART2:
 	.type	USART2_IRQHandler, %function
 USART2_IRQHandler:
 .LFB119:
-	.loc 1 250 0
+	.loc 1 237 0
 	.cfi_startproc
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
-	.loc 1 253 0
-	ldr	r3, .L90
+	.loc 1 240 0
+	ldr	r3, .L91
 	ldrh	r2, [r3]
 	lsls	r2, r2, #26
 	bpl	.L86
-	.loc 1 255 0
-	ldr	r2, .L90+4
-	ldrh	r1, [r3, #4]
-	ldrh	r3, [r2]
-	ldr	r0, .L90+8
-	uxth	r3, r3
-	uxtb	r1, r1
-	strb	r1, [r0, r3]
-	.loc 1 256 0
-	ldrh	r3, [r2]
-	adds	r3, r3, #1
-	uxth	r3, r3
-	strh	r3, [r2]	@ movhi
-	.loc 1 257 0
-	ldrh	r3, [r2]
-	cmp	r3, #512
-	.loc 1 259 0
-	itt	cs
-	movcs	r3, #0
-	strhcs	r3, [r2]	@ movhi
+	.loc 1 242 0
+	ldrh	r2, [r3, #4]
+.LVL60:
+	uxtb	r2, r2
+	.loc 1 244 0
+	strh	r2, [r3, #4]	@ movhi
+.LVL61:
 .L86:
-	.loc 1 262 0
+	.loc 1 246 0
 	bx	lr
-.L91:
+.L92:
 	.align	2
-.L90:
+.L91:
 	.word	1073759232
-	.word	.LANCHOR0
-	.word	g_usart2_buffer
 	.cfi_endproc
 .LFE119:
 	.size	USART2_IRQHandler, .-USART2_IRQHandler
@@ -833,43 +818,43 @@ chkRxBuffUSART2:
 	@ frame_needed = 0, uses_anonymous_args = 0
 	@ link register save eliminated.
 	.loc 1 267 0
-	ldr	r1, .L95
+	ldr	r1, .L96
 	.loc 1 275 0
-	ldr	r2, .L95+4
+	ldr	r2, .L96+4
 	.loc 1 267 0
 	ldrh	r3, [r1]
-.LVL60:
+.LVL62:
 	.loc 1 275 0
 	ldrh	r2, [r2]
 	.loc 1 269 0
 	adds	r3, r3, #1
-.LVL61:
+.LVL63:
 	uxth	r3, r3
-.LVL62:
+.LVL64:
 	.loc 1 270 0
 	cmp	r3, #512
 	.loc 1 272 0
 	it	cs
 	movcs	r3, #0
-.LVL63:
+.LVL65:
 	.loc 1 275 0
 	cmp	r3, r2
-	beq	.L92
+	beq	.L93
 	.loc 1 277 0
-	ldr	r2, .L95+8
-	ldr	r0, .L95+12
+	ldr	r2, .L96+8
+	ldr	r0, .L96+12
 	ldrb	r2, [r2, r3]	@ zero_extendqisi2
 	strh	r2, [r0, #4]	@ movhi
 	.loc 1 278 0
 	strh	r3, [r1]	@ movhi
-.L92:
+.L93:
 	.loc 1 281 0
 	bx	lr
-.L96:
+.L97:
 	.align	2
-.L95:
-	.word	.LANCHOR1
+.L96:
 	.word	.LANCHOR0
+	.word	.LANCHOR1
 	.word	g_usart2_buffer
 	.word	1073759232
 	.cfi_endproc
@@ -880,43 +865,43 @@ chkRxBuffUSART2:
 	.comm	g_usart2_buffer,512,4
 	.data
 	.align	1
-	.set	.LANCHOR1,. + 0
+	.set	.LANCHOR0,. + 0
 	.type	g_usart2_ridx, %object
 	.size	g_usart2_ridx, 2
 g_usart2_ridx:
 	.short	511
 	.bss
 	.align	1
-	.set	.LANCHOR0,. + 0
+	.set	.LANCHOR1,. + 0
 	.type	g_usart2_widx, %object
 	.size	g_usart2_widx, 2
 g_usart2_widx:
 	.space	2
 	.text
 .Letext0:
-	.file 3 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 4 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stdarg.h"
-	.file 5 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/stdio.h"
-	.file 6 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
-	.file 7 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
-	.file 8 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
-	.file 9 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
+	.file 3 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 4 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stdarg.h"
+	.file 5 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/stdio.h"
+	.file 6 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/lock.h"
+	.file 7 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_types.h"
+	.file 8 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/lib/gcc/arm-none-eabi/7.3.1/include/stddef.h"
+	.file 9 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/reent.h"
 	.file 10 "<built-in>"
-	.file 11 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 11 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 12 "../../../sdk/stm32f4xx.h"
 	.file 13 "../../../sdk/system_stm32f4xx.h"
 	.file 14 "misc.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0x1328
+	.4byte	0x132c
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF298
+	.4byte	.LASF297
 	.byte	0xc
+	.4byte	.LASF298
 	.4byte	.LASF299
-	.4byte	.LASF300
 	.4byte	.Ltext0
 	.4byte	.Letext0-.Ltext0
 	.4byte	.Ldebug_line0
@@ -2031,7 +2016,7 @@ g_usart2_widx:
 	.byte	0x3c
 	.4byte	0x82
 	.uleb128 0x22
-	.4byte	.LASF295
+	.4byte	.LASF294
 	.byte	0x5
 	.byte	0x1
 	.4byte	0x25
@@ -2868,41 +2853,42 @@ g_usart2_widx:
 	.byte	0x9c
 	.4byte	0x1048
 	.uleb128 0x2c
-	.4byte	.LASF280
+	.4byte	.LASF279
 	.byte	0x1
 	.2byte	0x10b
 	.4byte	0x908
-	.4byte	.LLST12
+	.4byte	.LLST13
 	.byte	0
 	.uleb128 0x2d
 	.4byte	.LASF278
 	.byte	0x1
-	.byte	0xf9
+	.byte	0xec
 	.4byte	.LFB119
 	.4byte	.LFE119-.LFB119
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1069
+	.4byte	0x106d
 	.uleb128 0x2e
-	.4byte	.LASF286
+	.4byte	.LASF280
 	.byte	0x1
-	.byte	0xfb
+	.byte	0xee
 	.4byte	0x8f8
+	.4byte	.LLST12
 	.byte	0
 	.uleb128 0x2d
-	.4byte	.LASF279
+	.4byte	.LASF281
 	.byte	0x1
 	.byte	0xdb
 	.4byte	.LFB118
 	.4byte	.LFE118-.LFB118
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x10c9
+	.4byte	0x10cd
 	.uleb128 0x2f
 	.ascii	"str\000"
 	.byte	0x1
 	.byte	0xdb
-	.4byte	0x10c9
+	.4byte	0x10cd
 	.4byte	.LLST4
 	.uleb128 0x30
 	.ascii	"k\000"
@@ -2911,37 +2897,37 @@ g_usart2_widx:
 	.4byte	0x908
 	.4byte	.LLST5
 	.uleb128 0x31
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LBB30
 	.4byte	.Ldebug_ranges0+0x40
 	.byte	0x1
 	.byte	0xe1
-	.4byte	0x10b3
+	.4byte	0x10b7
 	.uleb128 0x32
-	.4byte	0x1240
+	.4byte	0x1244
 	.byte	0
 	.uleb128 0x33
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LBB33
 	.4byte	.Ldebug_ranges0+0x58
 	.byte	0x1
 	.byte	0xe3
 	.uleb128 0x32
-	.4byte	0x1240
+	.4byte	0x1244
 	.byte	0
 	.byte	0
 	.uleb128 0x8
 	.byte	0x4
 	.4byte	0x8f8
 	.uleb128 0x2d
-	.4byte	.LASF281
+	.4byte	.LASF282
 	.byte	0x1
 	.byte	0x31
 	.4byte	.LFB117
 	.4byte	.LFE117-.LFB117
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x121e
+	.4byte	0x1222
 	.uleb128 0x34
 	.ascii	"str\000"
 	.byte	0x1
@@ -2952,10 +2938,10 @@ g_usart2_widx:
 	.sleb128 -16
 	.uleb128 0x35
 	.uleb128 0x36
-	.4byte	.LASF282
+	.4byte	.LASF283
 	.byte	0x1
 	.byte	0x33
-	.4byte	0x121e
+	.4byte	0x1222
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -88
@@ -2965,28 +2951,28 @@ g_usart2_widx:
 	.byte	0x34
 	.4byte	0x908
 	.4byte	.LLST6
-	.uleb128 0x37
-	.4byte	.LASF283
+	.uleb128 0x2e
+	.4byte	.LASF284
 	.byte	0x1
 	.byte	0x35
 	.4byte	0x908
 	.4byte	.LLST7
 	.uleb128 0x36
-	.4byte	.LASF284
+	.4byte	.LASF285
 	.byte	0x1
 	.byte	0x36
 	.4byte	0x928
 	.uleb128 0x3
 	.byte	0x91
 	.sleb128 -96
-	.uleb128 0x37
-	.4byte	.LASF285
+	.uleb128 0x2e
+	.4byte	.LASF286
 	.byte	0x1
 	.byte	0x37
-	.4byte	0x122e
+	.4byte	0x1232
 	.4byte	.LLST8
-	.uleb128 0x2e
-	.4byte	.LASF287
+	.uleb128 0x37
+	.4byte	.LASF300
 	.byte	0x1
 	.byte	0x38
 	.4byte	0x5be
@@ -3001,29 +2987,29 @@ g_usart2_widx:
 	.uleb128 0x39
 	.4byte	.LBB48
 	.4byte	.LBE48-.LBB48
-	.4byte	0x118b
-	.uleb128 0x37
-	.4byte	.LASF288
+	.4byte	0x118f
+	.uleb128 0x2e
+	.4byte	.LASF287
 	.byte	0x1
 	.byte	0x7f
 	.4byte	0x5c4
 	.4byte	.LLST10
 	.uleb128 0x3a
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LBB49
 	.4byte	.LBE49-.LBB49
 	.byte	0x1
 	.byte	0x80
 	.uleb128 0x3b
-	.4byte	0x1240
+	.4byte	0x1244
 	.4byte	.LLST11
 	.byte	0
 	.byte	0
 	.uleb128 0x3c
 	.4byte	.Ldebug_ranges0+0x88
-	.4byte	0x11b6
+	.4byte	0x11ba
 	.uleb128 0x36
-	.4byte	.LASF289
+	.4byte	.LASF288
 	.byte	0x1
 	.byte	0x8d
 	.4byte	0x938
@@ -3034,40 +3020,40 @@ g_usart2_widx:
 	.byte	0x5c
 	.byte	0x93
 	.uleb128 0x4
-	.uleb128 0x37
-	.4byte	.LASF290
+	.uleb128 0x2e
+	.4byte	.LASF289
 	.byte	0x1
 	.byte	0x8e
 	.4byte	0x928
 	.4byte	.LLST9
 	.byte	0
 	.uleb128 0x31
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LBB38
 	.4byte	.Ldebug_ranges0+0x70
 	.byte	0x1
 	.byte	0xd0
-	.4byte	0x11cf
+	.4byte	0x11d3
 	.uleb128 0x32
-	.4byte	0x1240
+	.4byte	0x1244
 	.byte	0
 	.uleb128 0x31
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LBB42
 	.4byte	.Ldebug_ranges0+0xa8
 	.byte	0x1
 	.byte	0xd2
-	.4byte	0x11e8
+	.4byte	0x11ec
 	.uleb128 0x32
-	.4byte	0x1240
+	.4byte	0x1244
 	.byte	0
 	.uleb128 0x3d
 	.4byte	.LVL24
-	.4byte	0x1069
+	.4byte	0x106d
 	.uleb128 0x3e
 	.4byte	.LVL38
-	.4byte	0x1320
-	.4byte	0x120c
+	.4byte	0x1324
+	.4byte	0x1210
 	.uleb128 0x3f
 	.uleb128 0x1
 	.byte	0x51
@@ -3083,7 +3069,7 @@ g_usart2_widx:
 	.byte	0
 	.uleb128 0x40
 	.4byte	.LVL39
-	.4byte	0x1069
+	.4byte	0x106d
 	.uleb128 0x3f
 	.uleb128 0x1
 	.byte	0x50
@@ -3094,7 +3080,7 @@ g_usart2_widx:
 	.byte	0
 	.uleb128 0xd
 	.4byte	0x8f8
-	.4byte	0x122e
+	.4byte	0x1232
 	.uleb128 0xe
 	.4byte	0x9b
 	.byte	0x27
@@ -3107,102 +3093,102 @@ g_usart2_widx:
 	.byte	0x1
 	.byte	0x2a
 	.byte	0x1
-	.4byte	0x124c
+	.4byte	0x1250
 	.uleb128 0x42
-	.4byte	.LASF286
+	.4byte	.LASF280
 	.byte	0x1
 	.byte	0x2a
 	.4byte	0x8f8
 	.byte	0
 	.uleb128 0x2d
-	.4byte	.LASF291
+	.4byte	.LASF290
 	.byte	0x1
 	.byte	0x22
 	.4byte	.LFB115
 	.4byte	.LFE115-.LFB115
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x127b
+	.4byte	0x127f
 	.uleb128 0x33
-	.4byte	0x12cf
+	.4byte	0x12d3
 	.4byte	.LBB24
 	.4byte	.Ldebug_ranges0+0x20
 	.byte	0x1
 	.byte	0x26
 	.uleb128 0x3b
-	.4byte	0x12dc
+	.4byte	0x12e0
 	.4byte	.LLST2
 	.byte	0
 	.byte	0
 	.uleb128 0x2d
-	.4byte	.LASF292
+	.4byte	.LASF291
 	.byte	0x1
 	.byte	0x1a
 	.4byte	.LFB114
 	.4byte	.LFE114-.LFB114
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x12aa
+	.4byte	0x12ae
 	.uleb128 0x33
-	.4byte	0x12e9
+	.4byte	0x12ed
 	.4byte	.LBB18
 	.4byte	.Ldebug_ranges0+0
 	.byte	0x1
 	.byte	0x1e
 	.uleb128 0x3b
-	.4byte	0x12f6
+	.4byte	0x12fa
 	.4byte	.LLST1
 	.byte	0
 	.byte	0
 	.uleb128 0x2d
-	.4byte	.LASF293
+	.4byte	.LASF292
 	.byte	0x1
 	.byte	0x8
 	.4byte	.LFB113
 	.4byte	.LFE113-.LFB113
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x12cf
+	.4byte	0x12d3
 	.uleb128 0x43
-	.4byte	.LASF294
+	.4byte	.LASF293
 	.byte	0x1
 	.byte	0x8
 	.4byte	0x928
 	.4byte	.LLST0
 	.byte	0
 	.uleb128 0x44
-	.4byte	.LASF296
+	.4byte	.LASF295
 	.byte	0x2
 	.2byte	0x43e
 	.byte	0x3
-	.4byte	0x12e9
+	.4byte	0x12ed
 	.uleb128 0x45
-	.4byte	.LASF295
+	.4byte	.LASF294
 	.byte	0x2
 	.2byte	0x43e
 	.4byte	0xb71
 	.byte	0
 	.uleb128 0x44
-	.4byte	.LASF297
+	.4byte	.LASF296
 	.byte	0x2
 	.2byte	0x430
 	.byte	0x3
-	.4byte	0x1303
+	.4byte	0x1307
 	.uleb128 0x45
-	.4byte	.LASF295
+	.4byte	.LASF294
 	.byte	0x2
 	.2byte	0x430
 	.4byte	0xb71
 	.byte	0
 	.uleb128 0x46
-	.4byte	0x1234
+	.4byte	0x1238
 	.4byte	.LFB116
 	.4byte	.LFE116-.LFB116
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0x1320
+	.4byte	0x1324
 	.uleb128 0x3b
-	.4byte	0x1240
+	.4byte	0x1244
 	.4byte	.LLST3
 	.byte	0
 	.uleb128 0x47
@@ -3813,6 +3799,8 @@ g_usart2_widx:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
+	.uleb128 0x2
+	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x2f
@@ -3930,8 +3918,6 @@ g_usart2_widx:
 	.uleb128 0xb
 	.uleb128 0x49
 	.uleb128 0x13
-	.uleb128 0x2
-	.uleb128 0x17
 	.byte	0
 	.byte	0
 	.uleb128 0x38
@@ -4145,15 +4131,22 @@ g_usart2_widx:
 	.byte	0
 	.section	.debug_loc,"",%progbits
 .Ldebug_loc0:
+.LLST13:
+	.4byte	.LVL62-.Ltext0
+	.4byte	.LVL63-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	.LVL64-.Ltext0
+	.4byte	.LFE120-.Ltext0
+	.2byte	0x1
+	.byte	0x53
+	.4byte	0
+	.4byte	0
 .LLST12:
 	.4byte	.LVL60-.Ltext0
 	.4byte	.LVL61-.Ltext0
 	.2byte	0x1
-	.byte	0x53
-	.4byte	.LVL62-.Ltext0
-	.4byte	.LFE120-.Ltext0
-	.2byte	0x1
-	.byte	0x53
+	.byte	0x52
 	.4byte	0
 	.4byte	0
 .LLST4:
@@ -4489,9 +4482,9 @@ g_usart2_widx:
 	.ascii	"RTC_WKUP_IRQn\000"
 .LASF151:
 	.ascii	"EXTI2_IRQn\000"
-.LASF281:
-	.ascii	"printUSART2\000"
 .LASF282:
+	.ascii	"printUSART2\000"
+.LASF283:
 	.ascii	"rstr\000"
 .LASF160:
 	.ascii	"DMA1_Stream6_IRQn\000"
@@ -4511,14 +4504,14 @@ g_usart2_widx:
 	.ascii	"_read\000"
 .LASF238:
 	.ascii	"NVIC_Type\000"
-.LASF298:
+.LASF297:
 	.ascii	"GNU C11 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mlittle-endian -mthumb -mcpu"
 	.ascii	"=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu"
 	.ascii	"=fpv4-sp-d16 -g -O2 -fsingle-precision-constant\000"
 .LASF62:
 	.ascii	"_write\000"
-.LASF284:
+.LASF285:
 	.ascii	"utmp32\000"
 .LASF132:
 	.ascii	"int32_t\000"
@@ -4564,7 +4557,7 @@ g_usart2_widx:
 	.ascii	"__wch\000"
 .LASF3:
 	.ascii	"__uint8_t\000"
-.LASF288:
+.LASF287:
 	.ascii	"tchar\000"
 .LASF219:
 	.ascii	"OTG_HS_WKUP_IRQn\000"
@@ -4578,7 +4571,7 @@ g_usart2_widx:
 	.ascii	"AHB2LPENR\000"
 .LASF45:
 	.ascii	"_on_exit_args\000"
-.LASF289:
+.LASF288:
 	.ascii	"utmp64\000"
 .LASF117:
 	.ascii	"_mbrlen_state\000"
@@ -4596,7 +4589,7 @@ g_usart2_widx:
 	.ascii	"DMA2_Stream5_IRQn\000"
 .LASF276:
 	.ascii	"g_usart2_ridx\000"
-.LASF295:
+.LASF294:
 	.ascii	"IRQn\000"
 .LASF169:
 	.ascii	"TIM1_TRG_COM_TIM11_IRQn\000"
@@ -4610,7 +4603,7 @@ g_usart2_widx:
 	.ascii	"SysTick_IRQn\000"
 .LASF182:
 	.ascii	"USART3_IRQn\000"
-.LASF287:
+.LASF300:
 	.ascii	"p_char\000"
 .LASF104:
 	.ascii	"_unused_rand\000"
@@ -4618,7 +4611,7 @@ g_usart2_widx:
 	.ascii	"signed char\000"
 .LASF130:
 	.ascii	"uint8_t\000"
-.LASF280:
+.LASF279:
 	.ascii	"t_usart2_ridx\000"
 .LASF156:
 	.ascii	"DMA1_Stream2_IRQn\000"
@@ -4636,6 +4629,9 @@ g_usart2_widx:
 	.ascii	"RESERVED5\000"
 .LASF268:
 	.ascii	"RESERVED6\000"
+.LASF299:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/usart-rx-irq\000"
 .LASF234:
 	.ascii	"IABR\000"
 .LASF80:
@@ -4674,7 +4670,7 @@ g_usart2_widx:
 	.ascii	"CAN1_RX0_IRQn\000"
 .LASF75:
 	.ascii	"_stdin\000"
-.LASF292:
+.LASF291:
 	.ascii	"enIrqUSART2\000"
 .LASF277:
 	.ascii	"chkRxBuffUSART2\000"
@@ -4820,7 +4816,7 @@ g_usart2_widx:
 	.ascii	"_freelist\000"
 .LASF99:
 	.ascii	"_iobs\000"
-.LASF293:
+.LASF292:
 	.ascii	"initUSART2\000"
 .LASF97:
 	.ascii	"_glue\000"
@@ -4856,7 +4852,7 @@ g_usart2_widx:
 	.ascii	"_wctomb_state\000"
 .LASF71:
 	.ascii	"_mbstate\000"
-.LASF285:
+.LASF286:
 	.ascii	"p_uint32\000"
 .LASF109:
 	.ascii	"_rand_next\000"
@@ -4878,13 +4874,13 @@ g_usart2_widx:
 	.ascii	"__tm_wday\000"
 .LASF253:
 	.ascii	"AHB3RSTR\000"
-.LASF290:
+.LASF289:
 	.ascii	"tmp1\000"
 .LASF14:
 	.ascii	"long double\000"
 .LASF43:
 	.ascii	"__tm_yday\000"
-.LASF283:
+.LASF284:
 	.ascii	"arg_type\000"
 .LASF101:
 	.ascii	"_seed\000"
@@ -4918,7 +4914,7 @@ g_usart2_widx:
 	.ascii	"uint16_t\000"
 .LASF47:
 	.ascii	"_dso_handle\000"
-.LASF296:
+.LASF295:
 	.ascii	"NVIC_DisableIRQ\000"
 .LASF100:
 	.ascii	"_rand48\000"
@@ -4936,7 +4932,7 @@ g_usart2_widx:
 	.ascii	"_base\000"
 .LASF208:
 	.ascii	"CAN2_RX1_IRQn\000"
-.LASF297:
+.LASF296:
 	.ascii	"NVIC_EnableIRQ\000"
 .LASF105:
 	.ascii	"_strtok_last\000"
@@ -4988,7 +4984,7 @@ g_usart2_widx:
 	.ascii	"RCC_TypeDef\000"
 .LASF111:
 	.ascii	"_mblen_state\000"
-.LASF299:
+.LASF298:
 	.ascii	"usart.c\000"
 .LASF2:
 	.ascii	"short int\000"
@@ -5002,10 +4998,7 @@ g_usart2_widx:
 	.ascii	"DMA1_Stream3_IRQn\000"
 .LASF41:
 	.ascii	"__tm_year\000"
-.LASF300:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/usart-rx-irq\000"
-.LASF294:
+.LASF293:
 	.ascii	"baudrate\000"
 .LASF248:
 	.ascii	"GPIO_TypeDef\000"
@@ -5019,7 +5012,7 @@ g_usart2_widx:
 	.ascii	"_inc\000"
 .LASF51:
 	.ascii	"_ind\000"
-.LASF279:
+.LASF281:
 	.ascii	"sprintUSART2\000"
 .LASF53:
 	.ascii	"__sbuf\000"
@@ -5081,7 +5074,7 @@ g_usart2_widx:
 	.ascii	"_fnargs\000"
 .LASF44:
 	.ascii	"__tm_isdst\000"
-.LASF286:
+.LASF280:
 	.ascii	"data\000"
 .LASF37:
 	.ascii	"__tm_min\000"
@@ -5089,7 +5082,7 @@ g_usart2_widx:
 	.ascii	"_getdate_err\000"
 .LASF259:
 	.ascii	"AHB3ENR\000"
-.LASF291:
+.LASF290:
 	.ascii	"disIrqUSART2\000"
 .LASF201:
 	.ascii	"DMA2_Stream2_IRQn\000"

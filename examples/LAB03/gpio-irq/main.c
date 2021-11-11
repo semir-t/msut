@@ -32,13 +32,13 @@ int main(void)
 	GPIOA->MODER &= ~0x00000003;  										// 
 	
 	RCC->APB2ENR |= RCC_APB2ENR_SYSCFGEN;								// enable clock on SYSCFG register
-	NVIC_EnableIRQ(EXTI0_IRQn);
 	SYSCFG->EXTICR[0] = SYSCFG_EXTICR1_EXTI0_PA;						// select PA 0 as interrupt source p259
 	EXTI->IMR = EXTI_IMR_MR0;											// enable interrupt on EXTI_Line0
 	EXTI->EMR &= ~EXTI_EMR_MR0;											// disable event on EXTI_Line0
 	EXTI->RTSR = EXTI_RTSR_TR0;	
 	EXTI->FTSR = 0x00000000;	
 	
+	NVIC_EnableIRQ(EXTI0_IRQn);
 	printUSART2("-> SYS: init completed\n");
 	led_timer = getSYSTIMER();
 	///wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww 	

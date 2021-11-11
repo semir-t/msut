@@ -3,7 +3,7 @@
 
 volatile uint8_t g_usart2_buffer[USART2_BUFFER_SIZE];
 volatile uint16_t g_usart2_widx = 0;
-volatile uint16_t g_usart2_ridx = ((USART2_BUFFER_SIZE) - 1);
+volatile uint16_t g_usart2_ridx = 0;
 
 void initUSART2(uint32_t baudrate)
 {
@@ -264,19 +264,14 @@ void USART2_IRQHandler(void)
 #endif
 void chkRxBuffUSART2(void)
 {
-	uint16_t t_usart2_ridx = g_usart2_ridx;
-
-	t_usart2_ridx++;
-	if(t_usart2_ridx >= (USART2_BUFFER_SIZE))
+	if(g_usart2_ridx != g_usart2_widx)
 	{
-		t_usart2_ridx = 0;
-	}
+		USART2->DR = g_usart2_buffer[g_usart2_ridx++];
+		if(g_usart2_ridx >= (USART2_BUFFER_SIZE))
+		{
+			g_usart2_ridx = 0;
+		}
 
-	if(t_usart2_ridx != g_usart2_widx)
-	{
-		USART2->DR = g_usart2_buffer[t_usart2_ridx];
-		g_usart2_ridx = t_usart2_ridx;
 	}
-
 }
 

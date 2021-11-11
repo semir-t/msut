@@ -949,8 +949,8 @@ getStr4NumMISC:
 .LFE112:
 	.size	getStr4NumMISC, .-getStr4NumMISC
 .Letext0:
-	.file 2 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
-	.file 3 "/home/semir/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+	.file 2 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+	.file 3 "/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/Fakultet/MSUT/students/gcc-arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
 	.file 4 "../../../sdk/core_cm4.h"
 	.file 5 "../../../sdk/system_stm32f4xx.h"
 	.section	.debug_info,"",%progbits
@@ -2643,13 +2643,11 @@ getStr4NumMISC:
 	.ascii	"=fpv4-sp-d16 -g -O2 -fsingle-precision-constant\000"
 .LASF23:
 	.ascii	"dnum\000"
-.LASF18:
-	.ascii	"ITM_RxBuffer\000"
+.LASF38:
+	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
+	.ascii	"akultet/MSUT/students/examples/LAB03/pwm\000"
 .LASF28:
 	.ascii	"d_part\000"
-.LASF38:
-	.ascii	"/home/semir/Dropbox/Fakultet/MSUT/students/examples"
-	.ascii	"/LAB03/pwm\000"
 .LASF6:
 	.ascii	"__uint16_t\000"
 .LASF10:
@@ -2658,6 +2656,8 @@ getStr4NumMISC:
 	.ascii	"rstr\000"
 .LASF22:
 	.ascii	"p_int32\000"
+.LASF18:
+	.ascii	"ITM_RxBuffer\000"
 .LASF34:
 	.ascii	"flag\000"
 .LASF1:

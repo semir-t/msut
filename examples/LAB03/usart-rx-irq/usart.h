@@ -6,7 +6,7 @@
 #include "stm32f4xx.h"
 #include "misc.h"
 
-/* #define USART_ECHO */
+// #define USART_ECHO
 
 #define USART2_BUFFER_SIZE			512
 
@@ -23,4 +23,8 @@ void sprintUSART2(uint8_t * str);
 void chkRxBuffUSART2(void);
 
 void enIrqUSART2(void);
+
+extern volatile uint8_t g_usart2_buffer[USART2_BUFFER_SIZE];
+extern volatile uint16_t g_usart2_widx;
+extern volatile uint16_t g_usart2_ridx;
 #endif 
