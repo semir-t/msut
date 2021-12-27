@@ -11,9 +11,10 @@ int main(void)
 	printUSART2("w Starting stopWATCH() test app...\n");
 	printUSART2("\nwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww\n");
 	
-	initSTOPWATCH();
 	initSYSTIMER();
 	
+
+	led_time = getSYSTIMER();
 	while(1)
 	{
 		printUSART2("-> SW: test [%d]\n",cnt);
@@ -24,7 +25,6 @@ int main(void)
 		time = stopSTOPWATCH();
 		printUSART2("     -> [100 ms] with delay_ms: [%d] us\n",time);
 		
-		time = getSYSTIMER();
 		while(chk4TimeoutSYSTIMER(time, 100000) == (SYSTIMER_KEEP_ALIVE));
 		time = getSYSTIMER() - time;
 		printUSART2("     -> [100 ms] with systimer: [%d] us\n",time);

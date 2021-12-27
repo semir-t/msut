@@ -31,81 +31,183 @@ main:
 	@ args = 0, pretend = 0, frame = 0
 	@ frame_needed = 0, uses_anonymous_args = 0
 .LVL0:
-	push	{r3, r4, r5, lr}
-	.cfi_def_cfa_offset 16
-	.cfi_offset 3, -16
-	.cfi_offset 4, -12
-	.cfi_offset 5, -8
+	push	{r4, r5, r6, r7, r8, lr}
+	.cfi_def_cfa_offset 24
+	.cfi_offset 4, -24
+	.cfi_offset 5, -20
+	.cfi_offset 6, -16
+	.cfi_offset 7, -12
+	.cfi_offset 8, -8
 	.cfi_offset 14, -4
 	.loc 1 9 0
 	mov	r0, #364
 	bl	initUSART2
 .LVL1:
 	.loc 1 10 0
-	ldr	r0, .L7
+	ldr	r0, .L12
 	.loc 1 17 0
-	ldr	r5, .L7+4
+	ldr	r4, .L12+4
 	.loc 1 10 0
 	bl	printUSART2
 .LVL2:
 	.loc 1 11 0
-	ldr	r0, .L7+8
+	ldr	r0, .L12+8
 	bl	printUSART2
 .LVL3:
 	.loc 1 12 0
-	ldr	r0, .L7
+	ldr	r0, .L12
 	bl	printUSART2
 .LVL4:
 	.loc 1 16 0
-	ldr	r2, .L7+12
+	ldr	r2, .L12+12
 	ldr	r3, [r2, #48]
 	orr	r3, r3, #8
 	str	r3, [r2, #48]
 	.loc 1 17 0
-	ldr	r3, [r5]
+	ldr	r3, [r4]
 	orr	r3, r3, #1426063360
-	str	r3, [r5]
+	str	r3, [r4]
 	.loc 1 18 0
-	ldr	r3, [r5, #4]
-	str	r3, [r5, #4]
+	ldr	r3, [r4, #4]
+	str	r3, [r4, #4]
 	.loc 1 19 0
-	ldr	r3, [r5, #8]
+	ldr	r3, [r4, #8]
 	.loc 1 21 0
 	movs	r2, #0
 	.loc 1 19 0
 	orr	r3, r3, #-16777216
-	str	r3, [r5, #8]
+	str	r3, [r4, #8]
 	.loc 1 21 0
-	str	r2, [r5, #20]
+	str	r2, [r4, #20]
 	.loc 1 22 0
 	bl	initSYSTIMER
 .LVL5:
-	.loc 1 24 0
-	bl	getSYSTIMER
+	.loc 1 23 0
+	movs	r0, #100
+	bl	delay_ms
 .LVL6:
-	mov	r4, r0
+	.loc 1 25 0
+	bl	getSYSTIMER
 .LVL7:
-.L2:
-	.loc 1 27 0
-	mov	r1, #500
-	mov	r0, r4
-	bl	chk4TimeoutSYSTIMER
+	mov	r8, r0
 .LVL8:
-	cmp	r0, #0
-	bne	.L2
-	.loc 1 29 0
-	ldr	r3, [r5, #20]
-	eor	r3, r3, #4096
-	str	r3, [r5, #20]
-	.loc 1 30 0
+	.loc 1 26 0
 	bl	getSYSTIMER
 .LVL9:
-	mov	r4, r0
+	mov	r7, r0
 .LVL10:
-	b	.L2
-.L8:
+	.loc 1 27 0
+	bl	getSYSTIMER
+.LVL11:
+	mov	r6, r0
+.LVL12:
+	.loc 1 28 0
+	bl	getSYSTIMER
+.LVL13:
+	mov	r5, r0
+.LVL14:
+.L2:
+	.loc 1 31 0
+	movs	r1, #100
+	mov	r0, r8
+	bl	chk4TimeoutSYSTIMER
+.LVL15:
+	cbz	r0, .L9
+.L3:
+	.loc 1 37 0
+	movs	r1, #150
+	mov	r0, r7
+	bl	chk4TimeoutSYSTIMER
+.LVL16:
+	cbz	r0, .L10
+.L4:
+	.loc 1 43 0
+	movs	r1, #250
+	mov	r0, r6
+	bl	chk4TimeoutSYSTIMER
+.LVL17:
+	cbz	r0, .L11
+.L5:
+	.loc 1 49 0
+	mov	r1, #430
+	mov	r0, r5
+	bl	chk4TimeoutSYSTIMER
+.LVL18:
+	cmp	r0, #0
+	bne	.L2
+	.loc 1 51 0
+	ldr	r3, [r4, #20]
+	eor	r3, r3, #32768
+	str	r3, [r4, #20]
+	.loc 1 52 0
+	bl	getSYSTIMER
+.LVL19:
+	.loc 1 31 0
+	movs	r1, #100
+	.loc 1 52 0
+	mov	r5, r0
+.LVL20:
+	.loc 1 31 0
+	mov	r0, r8
+.LVL21:
+	bl	chk4TimeoutSYSTIMER
+.LVL22:
+	cmp	r0, #0
+	bne	.L3
+.L9:
+	.loc 1 33 0
+	ldr	r3, [r4, #20]
+	eor	r3, r3, #4096
+	str	r3, [r4, #20]
+	.loc 1 34 0
+	bl	getSYSTIMER
+.LVL23:
+	.loc 1 37 0
+	movs	r1, #150
+	.loc 1 34 0
+	mov	r8, r0
+.LVL24:
+	.loc 1 37 0
+	mov	r0, r7
+.LVL25:
+	bl	chk4TimeoutSYSTIMER
+.LVL26:
+	cmp	r0, #0
+	bne	.L4
+.L10:
+	.loc 1 39 0
+	ldr	r3, [r4, #20]
+	eor	r3, r3, #8192
+	str	r3, [r4, #20]
+	.loc 1 40 0
+	bl	getSYSTIMER
+.LVL27:
+	.loc 1 43 0
+	movs	r1, #250
+	.loc 1 40 0
+	mov	r7, r0
+.LVL28:
+	.loc 1 43 0
+	mov	r0, r6
+.LVL29:
+	bl	chk4TimeoutSYSTIMER
+.LVL30:
+	cmp	r0, #0
+	bne	.L5
+.L11:
+	.loc 1 45 0
+	ldr	r3, [r4, #20]
+	eor	r3, r3, #16384
+	str	r3, [r4, #20]
+	.loc 1 46 0
+	bl	getSYSTIMER
+.LVL31:
+	mov	r6, r0
+.LVL32:
+	b	.L5
+.L13:
 	.align	2
-.L7:
+.L12:
 	.word	.LC0
 	.word	1073875968
 	.word	.LC1
@@ -135,15 +237,15 @@ main:
 	.file 12 "delay.h"
 	.section	.debug_info,"",%progbits
 .Ldebug_info0:
-	.4byte	0xc58
+	.4byte	0xd76
 	.2byte	0x4
 	.4byte	.Ldebug_abbrev0
 	.byte	0x4
 	.uleb128 0x1
-	.4byte	.LASF171
+	.4byte	.LASF175
 	.byte	0xc
-	.4byte	.LASF172
-	.4byte	.LASF173
+	.4byte	.LASF176
+	.4byte	.LASF177
 	.4byte	.Ldebug_ranges0+0
 	.4byte	0
 	.4byte	.Ldebug_line0
@@ -1503,7 +1605,7 @@ main:
 	.2byte	0x32f
 	.4byte	0x6e3
 	.uleb128 0x23
-	.4byte	.LASF174
+	.4byte	.LASF178
 	.byte	0x1
 	.byte	0x5
 	.4byte	0x7e
@@ -1511,7 +1613,7 @@ main:
 	.4byte	.LFE113-.LFB113
 	.uleb128 0x1
 	.byte	0x9c
-	.4byte	0xc24
+	.4byte	0xd37
 	.uleb128 0x24
 	.ascii	"cnt\000"
 	.byte	0x1
@@ -1519,20 +1621,38 @@ main:
 	.4byte	0xac
 	.byte	0
 	.uleb128 0x25
-	.4byte	.LASF175
+	.4byte	.LASF179
 	.byte	0x1
 	.byte	0x7
 	.4byte	0xac
 	.uleb128 0x26
 	.4byte	.LASF165
 	.byte	0x1
-	.byte	0x18
+	.byte	0x19
 	.4byte	0xac
 	.4byte	.LLST0
+	.uleb128 0x26
+	.4byte	.LASF166
+	.byte	0x1
+	.byte	0x1a
+	.4byte	0xac
+	.4byte	.LLST1
+	.uleb128 0x26
+	.4byte	.LASF167
+	.byte	0x1
+	.byte	0x1b
+	.4byte	0xac
+	.4byte	.LLST2
+	.uleb128 0x26
+	.4byte	.LASF168
+	.byte	0x1
+	.byte	0x1c
+	.4byte	0xac
+	.4byte	.LLST3
 	.uleb128 0x27
 	.4byte	.LVL1
-	.4byte	0xc24
-	.4byte	0xba8
+	.4byte	0xd37
+	.4byte	0xbd5
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x50
@@ -1542,8 +1662,8 @@ main:
 	.byte	0
 	.uleb128 0x27
 	.4byte	.LVL2
-	.4byte	0xc2f
-	.4byte	0xbbf
+	.4byte	0xd42
+	.4byte	0xbec
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x50
@@ -1553,8 +1673,8 @@ main:
 	.byte	0
 	.uleb128 0x27
 	.4byte	.LVL3
-	.4byte	0xc2f
-	.4byte	0xbd6
+	.4byte	0xd42
+	.4byte	0xc03
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x50
@@ -1564,8 +1684,8 @@ main:
 	.byte	0
 	.uleb128 0x27
 	.4byte	.LVL4
-	.4byte	0xc2f
-	.4byte	0xbed
+	.4byte	0xd42
+	.4byte	0xc1a
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x50
@@ -1575,54 +1695,190 @@ main:
 	.byte	0
 	.uleb128 0x29
 	.4byte	.LVL5
-	.4byte	0xc3a
-	.uleb128 0x29
-	.4byte	.LVL6
-	.4byte	0xc45
+	.4byte	0xd4d
 	.uleb128 0x27
-	.4byte	.LVL8
-	.4byte	0xc50
-	.4byte	0xc1a
+	.4byte	.LVL6
+	.4byte	0xd58
+	.4byte	0xc37
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x50
 	.uleb128 0x2
-	.byte	0x74
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x29
+	.4byte	.LVL7
+	.4byte	0xd63
+	.uleb128 0x29
+	.4byte	.LVL9
+	.4byte	0xd63
+	.uleb128 0x29
+	.4byte	.LVL11
+	.4byte	0xd63
+	.uleb128 0x29
+	.4byte	.LVL13
+	.4byte	0xd63
+	.uleb128 0x27
+	.4byte	.LVL15
+	.4byte	0xd6e
+	.4byte	0xc75
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x78
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x27
+	.4byte	.LVL16
+	.4byte	0xd6e
+	.4byte	0xc8f
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x77
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x96
+	.byte	0
+	.uleb128 0x27
+	.4byte	.LVL17
+	.4byte	0xd6e
+	.4byte	0xca9
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x76
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0xfa
+	.byte	0
+	.uleb128 0x27
+	.4byte	.LVL18
+	.4byte	0xd6e
+	.4byte	0xcc4
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x75
 	.sleb128 0
 	.uleb128 0x28
 	.uleb128 0x1
 	.byte	0x51
 	.uleb128 0x3
 	.byte	0xa
-	.2byte	0x1f4
+	.2byte	0x1ae
 	.byte	0
 	.uleb128 0x29
-	.4byte	.LVL9
-	.4byte	0xc45
+	.4byte	.LVL19
+	.4byte	0xd63
+	.uleb128 0x27
+	.4byte	.LVL22
+	.4byte	0xd6e
+	.4byte	0xce7
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x78
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x64
+	.byte	0
+	.uleb128 0x29
+	.4byte	.LVL23
+	.4byte	0xd63
+	.uleb128 0x27
+	.4byte	.LVL26
+	.4byte	0xd6e
+	.4byte	0xd0a
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x77
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0x96
+	.byte	0
+	.uleb128 0x29
+	.4byte	.LVL27
+	.4byte	0xd63
+	.uleb128 0x27
+	.4byte	.LVL30
+	.4byte	0xd6e
+	.4byte	0xd2d
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x50
+	.uleb128 0x2
+	.byte	0x76
+	.sleb128 0
+	.uleb128 0x28
+	.uleb128 0x1
+	.byte	0x51
+	.uleb128 0x2
+	.byte	0x8
+	.byte	0xfa
+	.byte	0
+	.uleb128 0x29
+	.4byte	.LVL31
+	.4byte	0xd63
 	.byte	0
 	.uleb128 0x2a
-	.4byte	.LASF166
-	.4byte	.LASF166
+	.4byte	.LASF169
+	.4byte	.LASF169
 	.byte	0xb
 	.byte	0xc
 	.uleb128 0x2a
-	.4byte	.LASF167
-	.4byte	.LASF167
+	.4byte	.LASF170
+	.4byte	.LASF170
 	.byte	0xb
 	.byte	0xe
 	.uleb128 0x2a
-	.4byte	.LASF168
-	.4byte	.LASF168
+	.4byte	.LASF171
+	.4byte	.LASF171
 	.byte	0xc
 	.byte	0x11
 	.uleb128 0x2a
-	.4byte	.LASF169
-	.4byte	.LASF169
+	.4byte	.LASF172
+	.4byte	.LASF172
+	.byte	0xc
+	.byte	0x9
+	.uleb128 0x2a
+	.4byte	.LASF173
+	.4byte	.LASF173
 	.byte	0xc
 	.byte	0x12
 	.uleb128 0x2a
-	.4byte	.LASF170
-	.4byte	.LASF170
+	.4byte	.LASF174
+	.4byte	.LASF174
 	.byte	0xc
 	.byte	0x13
 	.byte	0
@@ -2168,14 +2424,71 @@ main:
 	.section	.debug_loc,"",%progbits
 .Ldebug_loc0:
 .LLST0:
-	.4byte	.LVL7
-	.4byte	.LVL10
+	.4byte	.LVL8
+	.4byte	.LVL9-1
 	.2byte	0x1
-	.byte	0x54
+	.byte	0x50
+	.4byte	.LVL9-1
+	.4byte	.LVL24
+	.2byte	0x1
+	.byte	0x58
+	.4byte	.LVL24
+	.4byte	.LVL25
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL25
+	.4byte	.LFE113
+	.2byte	0x1
+	.byte	0x58
+	.4byte	0
+	.4byte	0
+.LLST1:
 	.4byte	.LVL10
+	.4byte	.LVL11-1
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL11-1
+	.4byte	.LVL28
+	.2byte	0x1
+	.byte	0x57
+	.4byte	.LVL28
+	.4byte	.LVL29
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL29
+	.4byte	.LFE113
+	.2byte	0x1
+	.byte	0x57
+	.4byte	0
+	.4byte	0
+.LLST2:
+	.4byte	.LVL12
+	.4byte	.LVL13-1
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL13-1
+	.4byte	.LVL32
+	.2byte	0x1
+	.byte	0x56
+	.4byte	.LVL32
 	.4byte	.LFE113
 	.2byte	0x1
 	.byte	0x50
+	.4byte	0
+	.4byte	0
+.LLST3:
+	.4byte	.LVL14
+	.4byte	.LVL20
+	.2byte	0x1
+	.byte	0x55
+	.4byte	.LVL20
+	.4byte	.LVL21
+	.2byte	0x1
+	.byte	0x50
+	.4byte	.LVL21
+	.4byte	.LFE113
+	.2byte	0x1
+	.byte	0x55
 	.4byte	0
 	.4byte	0
 	.section	.debug_aranges,"",%progbits
@@ -2237,7 +2550,7 @@ main:
 	.ascii	"_mbrtowc_state\000"
 .LASF41:
 	.ascii	"AHB1LPENR\000"
-.LASF166:
+.LASF169:
 	.ascii	"initUSART2\000"
 .LASF148:
 	.ascii	"_wctomb_state\000"
@@ -2287,6 +2600,8 @@ main:
 	.ascii	"long long int\000"
 .LASF12:
 	.ascii	"uint16_t\000"
+.LASF167:
+	.ascii	"led3_time\000"
 .LASF124:
 	.ascii	"_cvtbuf\000"
 .LASF103:
@@ -2347,7 +2662,7 @@ main:
 	.ascii	"AHB3RSTR\000"
 .LASF119:
 	.ascii	"_result\000"
-.LASF171:
+.LASF175:
 	.ascii	"GNU C11 7.3.1 20180622 (release) [ARM/embedded-7-br"
 	.ascii	"anch revision 261907] -mlittle-endian -mthumb -mcpu"
 	.ascii	"=cortex-m4 -mthumb-interwork -mfloat-abi=hard -mfpu"
@@ -2356,7 +2671,7 @@ main:
 	.ascii	"_nextf\000"
 .LASF54:
 	.ascii	"_LOCK_T\000"
-.LASF172:
+.LASF176:
 	.ascii	"main.c\000"
 .LASF125:
 	.ascii	"_new\000"
@@ -2366,7 +2681,7 @@ main:
 	.ascii	"_lock\000"
 .LASF137:
 	.ascii	"_mult\000"
-.LASF167:
+.LASF170:
 	.ascii	"printUSART2\000"
 .LASF97:
 	.ascii	"_write\000"
@@ -2376,7 +2691,7 @@ main:
 	.ascii	"__ULong\000"
 .LASF68:
 	.ascii	"_wds\000"
-.LASF173:
+.LASF177:
 	.ascii	"/mnt/fc1baefc-d6c5-4544-a806-4037b5232b05/Dropbox/F"
 	.ascii	"akultet/MSUT/students/examples/LAB02/systimer-led\000"
 .LASF42:
@@ -2385,7 +2700,7 @@ main:
 	.ascii	"__tm_mon\000"
 .LASF85:
 	.ascii	"_atexit\000"
-.LASF175:
+.LASF179:
 	.ascii	"time\000"
 .LASF117:
 	.ascii	"__sdidinit\000"
@@ -2413,7 +2728,7 @@ main:
 	.ascii	"RESERVED5\000"
 .LASF49:
 	.ascii	"RESERVED6\000"
-.LASF168:
+.LASF171:
 	.ascii	"initSYSTIMER\000"
 .LASF13:
 	.ascii	"int32_t\000"
@@ -2427,7 +2742,7 @@ main:
 	.ascii	"_flock_t\000"
 .LASF78:
 	.ascii	"__tm_yday\000"
-.LASF169:
+.LASF173:
 	.ascii	"getSYSTIMER\000"
 .LASF88:
 	.ascii	"__sbuf\000"
@@ -2457,7 +2772,7 @@ main:
 	.ascii	"__cleanup\000"
 .LASF115:
 	.ascii	"_unspecified_locale_info\000"
-.LASF170:
+.LASF174:
 	.ascii	"chk4TimeoutSYSTIMER\000"
 .LASF66:
 	.ascii	"_maxwds\000"
@@ -2465,6 +2780,8 @@ main:
 	.ascii	"_reent\000"
 .LASF136:
 	.ascii	"_seed\000"
+.LASF172:
+	.ascii	"delay_ms\000"
 .LASF60:
 	.ascii	"__count\000"
 .LASF161:
@@ -2497,6 +2814,8 @@ main:
 	.ascii	"__int32_t\000"
 .LASF65:
 	.ascii	"_next\000"
+.LASF166:
+	.ascii	"led2_time\000"
 .LASF140:
 	.ascii	"_strtok_last\000"
 .LASF38:
@@ -2531,6 +2850,8 @@ main:
 	.ascii	"_nmalloc\000"
 .LASF149:
 	.ascii	"_l64a_buf\000"
+.LASF168:
+	.ascii	"led4_time\000"
 .LASF127:
 	.ascii	"_sig_func\000"
 .LASF101:
@@ -2551,7 +2872,7 @@ main:
 	.ascii	"_mbtowc_state\000"
 .LASF121:
 	.ascii	"_p5s\000"
-.LASF174:
+.LASF178:
 	.ascii	"main\000"
 .LASF74:
 	.ascii	"__tm_mday\000"

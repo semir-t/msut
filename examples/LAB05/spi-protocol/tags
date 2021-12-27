@@ -1,0 +1,142 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AHBPrescTable	system_stm32f4xx.c	/^  __I uint8_t AHBPrescTable[16] = {0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 6, 7, 8, 9};$/;"	v
+AHBPrescTable	system_stm32f4xx.s	/^AHBPrescTable:$/;"	l
+CC	Makefile	/^CC = $(GNUGCC)\/arm-none-eabi-gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS  = -g -O2 -Wfatal-errors -Tstm32_flash.ld $/;"	m
+GNUGCC	Makefile	/^GNUGCC = $(STM_COMMON)\/gcc-arm-none-eabi\/bin$/;"	m
+I2S_FLAG_CHSIDE	spi.h	16;"	d
+I2S_FLAG_UDR	spi.h	17;"	d
+LIS302DL_CTRL_REG1	lis302dl.h	15;"	d
+LIS302DL_CTRL_REG2	lis302dl.h	16;"	d
+LIS302DL_MULTIPLE	lis302dl.h	13;"	d
+LIS302DL_OUT_X	lis302dl.h	18;"	d
+LIS302DL_OUT_Y	lis302dl.h	19;"	d
+LIS302DL_OUT_Z	lis302dl.h	20;"	d
+LIS302DL_READ	lis302dl.h	12;"	d
+LIS302DL_REG_WHO_AM_I	lis302dl.h	9;"	d
+LIS302DL_REG_WHO_AM_I_VAL	lis302dl.h	10;"	d
+LIS302DL_STATUS_REG	lis302dl.h	17;"	d
+MAX_PRINT_STRING_SIZE	misc.h	6;"	d
+OBJCOPY	Makefile	/^OBJCOPY = $(GNUGCC)\/arm-none-eabi-objcopy$/;"	m
+OBJS	Makefile	/^OBJS = $(SRCS:.c=.o)$/;"	m
+PLL_M	system_stm32f4xx.c	147;"	d	file:
+PLL_N	system_stm32f4xx.c	148;"	d	file:
+PLL_P	system_stm32f4xx.c	151;"	d	file:
+PLL_Q	system_stm32f4xx.c	154;"	d	file:
+PRINT_ARG_TYPE_BINARY_BYTE	misc.h	8;"	d
+PRINT_ARG_TYPE_BINARY_HALFWORD	misc.h	9;"	d
+PRINT_ARG_TYPE_BINARY_WORD	misc.h	10;"	d
+PRINT_ARG_TYPE_CHARACTER	misc.h	14;"	d
+PRINT_ARG_TYPE_DECIMAL_BYTE	misc.h	11;"	d
+PRINT_ARG_TYPE_DECIMAL_HALFWORD	misc.h	12;"	d
+PRINT_ARG_TYPE_DECIMAL_WORD	misc.h	13;"	d
+PRINT_ARG_TYPE_FLOAT	misc.h	16;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_BYTE	misc.h	17;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_HALFWORD	misc.h	18;"	d
+PRINT_ARG_TYPE_HEXADECIMAL_WORD	misc.h	19;"	d
+PRINT_ARG_TYPE_MASK_CHAR_STRING	misc.h	22;"	d
+PRINT_ARG_TYPE_STRING	misc.h	15;"	d
+PRINT_ARG_TYPE_UNKNOWN	misc.h	20;"	d
+PROJ_NAME	Makefile	/^PROJ_NAME=main$/;"	m
+SIZE	Makefile	/^SIZE =  $(GNUGCC)\/arm-none-eabi-size$/;"	m
+SPI1_CS_HIGH	spi.h	24;"	d
+SPI1_CS_LOW	spi.h	25;"	d
+SPI_BaudRatePrescaler_128	spi.h	12;"	d
+SPI_BaudRatePrescaler_16	spi.h	9;"	d
+SPI_BaudRatePrescaler_2	spi.h	6;"	d
+SPI_BaudRatePrescaler_256	spi.h	13;"	d
+SPI_BaudRatePrescaler_32	spi.h	10;"	d
+SPI_BaudRatePrescaler_4	spi.h	7;"	d
+SPI_BaudRatePrescaler_64	spi.h	11;"	d
+SPI_BaudRatePrescaler_8	spi.h	8;"	d
+SPI_FLAG_CRCERR	spi.h	18;"	d
+SPI_FLAG_MODF	spi.h	19;"	d
+SPI_I2S_FLAG_BSY	spi.h	21;"	d
+SPI_I2S_FLAG_OVR	spi.h	20;"	d
+SPI_I2S_FLAG_RXNE	spi.h	14;"	d
+SPI_I2S_FLAG_TIFRFE	spi.h	22;"	d
+SPI_I2S_FLAG_TXE	spi.h	15;"	d
+SRCS	Makefile	/^SRCS = main.c system_stm32f4xx.c $/;"	m
+STLINK	Makefile	/^STLINK=..\/..\/..\/stlink$/;"	m
+STM_COMMON	Makefile	/^STM_COMMON=..\/..\/..\/..\/STM32F407$/;"	m
+SYSTIMER_KEEP_ALIVE	delay.h	7;"	d
+SYSTIMER_TIMEOUT	delay.h	6;"	d
+SYSTIM_KEEP_ALIVE	delay.h	9;"	d
+SYSTIM_TIMEOUT	delay.h	8;"	d
+SetSysClock	system_stm32f4xx.c	/^static void SetSysClock(void)$/;"	f	file:
+SystemCoreClock	system_stm32f4xx.c	/^  uint32_t SystemCoreClock = 168000000;$/;"	v
+SystemCoreClock	system_stm32f4xx.s	/^SystemCoreClock:$/;"	l
+SystemCoreClockUpdate	system_stm32f4xx.c	/^void SystemCoreClockUpdate(void)$/;"	f
+SystemCoreClockUpdate	system_stm32f4xx.s	/^SystemCoreClockUpdate:$/;"	l
+SystemInit	system_stm32f4xx.c	/^void SystemInit(void)$/;"	f
+SystemInit	system_stm32f4xx.s	/^SystemInit:$/;"	l
+SystemInit_ExtMemCtl	system_stm32f4xx.c	/^void SystemInit_ExtMemCtl(void)$/;"	f
+TIM7_IRQHandler	delay.c	/^void TIM7_IRQHandler(void)$/;"	f
+TIM7_IRQHandler	delay.s	/^TIM7_IRQHandler:$/;"	l
+USART2_BAUDRATE_115200	usart.h	11;"	d
+USART2_BAUDRATE_460800	usart.h	10;"	d
+USART2_BAUDRATE_921600	usart.h	9;"	d
+USART2_BAUDRATE_9600	usart.h	12;"	d
+VECT_TAB_OFFSET	system_stm32f4xx.c	142;"	d	file:
+__DELAY_H	delay.h	2;"	d
+__LIS302DL_H_	lis302dl.h	2;"	d
+__MISC_H_	misc.h	2;"	d
+__SPI1_H_	spi.h	2;"	d
+__USART2_H_	usart.h	2;"	d
+chk4TimeoutSYSTIM	delay.c	/^uint8_t chk4TimeoutSYSTIM(uint32_t btime, uint32_t period)$/;"	f
+chk4TimeoutSYSTIM	delay.s	/^chk4TimeoutSYSTIM:$/;"	l
+chk4TimeoutSYSTIMER	delay.c	/^uint8_t chk4TimeoutSYSTIMER(uint32_t btime, uint32_t period)$/;"	f
+chk4TimeoutSYSTIMER	delay.s	/^chk4TimeoutSYSTIMER:$/;"	l
+delay_ms	delay.c	/^void delay_ms(uint32_t ms)$/;"	f
+delay_ms	delay.s	/^delay_ms:$/;"	l
+delay_us	delay.c	/^void delay_us(uint32_t us)$/;"	f
+delay_us	delay.s	/^delay_us:$/;"	l
+g_tim7_val	delay.c	/^volatile uint32_t g_tim7_val = 0;$/;"	v
+g_tim7_val	delay.s	/^g_tim7_val:$/;"	l
+getDNumMISC	misc.c	/^void getDNumMISC(uint8_t *dnum, uint32_t num)$/;"	f
+getDNumMISC	misc.s	/^getDNumMISC:$/;"	l
+getDataLIS302DL	lis302dl.c	/^void getDataLIS302DL(int8_t * accel_data)$/;"	f
+getDataLIS302DL	lis302dl.s	/^getDataLIS302DL:$/;"	l
+getSYSTIM	delay.c	/^uint32_t getSYSTIM(void)$/;"	f
+getSYSTIM	delay.s	/^getSYSTIM:$/;"	l
+getSYSTIMER	delay.c	/^uint32_t getSYSTIMER(void)$/;"	f
+getSYSTIMER	delay.s	/^getSYSTIMER:$/;"	l
+getStr4NumMISC	misc.c	/^void getStr4NumMISC(uint16_t type, uint32_t  * num, uint8_t * rstr)$/;"	f
+getStr4NumMISC	misc.s	/^getStr4NumMISC:$/;"	l
+getcharUSART2	usart.c	/^uint8_t getcharUSART2(void)$/;"	f
+getcharUSART2	usart.s	/^getcharUSART2:$/;"	l
+initLIS302DL	lis302dl.c	/^void initLIS302DL(void)$/;"	f
+initLIS302DL	lis302dl.s	/^initLIS302DL:$/;"	l
+initSPI1	spi.c	/^void initSPI1(uint16_t prescaler)$/;"	f
+initSPI1	spi.s	/^initSPI1:$/;"	l
+initSTOPWATCH	delay.c	/^void initSTOPWATCH(void)$/;"	f
+initSTOPWATCH	delay.s	/^initSTOPWATCH:$/;"	l
+initSYSTIM	delay.c	/^void initSYSTIM(void)$/;"	f
+initSYSTIM	delay.s	/^initSYSTIM:$/;"	l
+initSYSTIMER	delay.c	/^void initSYSTIMER(void)$/;"	f
+initSYSTIMER	delay.s	/^initSYSTIMER:$/;"	l
+initUSART2	usart.c	/^void initUSART2(uint32_t baudrate)$/;"	f
+initUSART2	usart.s	/^initUSART2:$/;"	l
+main	main.c	/^uint8_t main(void)$/;"	f
+main	main.s	/^main:$/;"	l
+printUSART2	usart.c	/^void printUSART2(char *str, ... )$/;"	f
+printUSART2	usart.s	/^printUSART2:$/;"	l
+putDNumMISC	misc.c	/^void putDNumMISC(uint8_t *dnum, uint16_t *m, uint8_t *r_str)$/;"	f
+putDNumMISC	misc.s	/^putDNumMISC:$/;"	l
+putcharUSART2	usart.c	/^void putcharUSART2(uint8_t data)$/;"	f
+putcharUSART2	usart.s	/^putcharUSART2:$/;"	l
+rxByteSPI1	spi.c	/^uint8_t rxByteSPI1(void)$/;"	f
+rxByteSPI1	spi.s	/^rxByteSPI1:$/;"	l
+sprintUSART2	usart.c	/^void sprintUSART2(uint8_t * str)$/;"	f
+sprintUSART2	usart.s	/^sprintUSART2:$/;"	l
+startSTOPWATCH	delay.c	/^void startSTOPWATCH(void)$/;"	f
+startSTOPWATCH	delay.s	/^startSTOPWATCH:$/;"	l
+stopSTOPWATCH	delay.c	/^uint32_t stopSTOPWATCH(void)$/;"	f
+stopSTOPWATCH	delay.s	/^stopSTOPWATCH:$/;"	l
+txByteSPI1	spi.c	/^uint8_t txByteSPI1(uint8_t data)$/;"	f
+txByteSPI1	spi.s	/^txByteSPI1:$/;"	l
